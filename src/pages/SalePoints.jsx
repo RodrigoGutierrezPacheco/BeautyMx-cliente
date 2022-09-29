@@ -1,20 +1,17 @@
-import Modal from "./ModalSales"
-console.log()
-
 const stores = [
   {
     name: 'Espacio Pink-San Diego',
     description: 'Horario: Lunes-Viernes de 10:30-18:30 y Sabados de 10:30-14:30',
     imageSrc: 'https://scontent.fcvj1-1.fna.fbcdn.net/v/t39.30808-6/245253789_1056736628198691_7176325707063279624_n.png?_nc_cat=103&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=cYwSYe6P93EAX9gGgnf&_nc_ht=scontent.fcvj1-1.fna&oh=00_AT8f9PromB8vqgI0SbTMXqyOJJmHjTG71n3vGJhgnYg46Q&oe=63392C37',
     imageAlt: 'Desk with leather desk pad, walnut desk organizer, wireless keyboard and mouse, and porcelain mug.',
-    href: '#',
+    href:"#",
   },
   {
     name: 'Plaza Cuernavaca',
     description: 'Horario: Todos los dias de 10:30-19:30',
     imageSrc: 'https://scontent.fcvj1-1.fna.fbcdn.net/v/t1.6435-9/125176200_3506563756047462_2554141924923154589_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=DRUfAh-JSmIAX_zHulY&_nc_oc=AQmytrUlPxr93VGLwvNtGjC0yGKM-jKwUkCHQqhKFrmRSQ0jv8CgmBAoPjOt1r-Gdew&_nc_ht=scontent.fcvj1-1.fna&oh=00_AT_sqNeEaR1wtgU4Ss_pn-6EIy6OOFdb7-1-S9BxapxLcw&oe=635A8F07',
     imageAlt: 'Wood table with porcelain mug, leather journal, brass pen, leather key ring, and a houseplant.',
-    href: '',
+    href: '#',
   },
   {
     name: 'Puertas Abiertas-Forum Cuernavaca',
@@ -50,6 +47,7 @@ export default function PointsOfSale() {
                   </a>
                 </h3>
                 <p className="text-base font-semibold text-gray-900">{stores.description}</p>
+								<button>Informacion</button>
               </div>
             ))}
           </div>

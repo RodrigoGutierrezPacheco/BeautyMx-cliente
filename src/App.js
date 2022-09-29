@@ -10,6 +10,7 @@ import Signup from "./pages/Signup";
 import LogIn from "./pages/LogIn";
 import Products from "./pages/Products";
 import SalePoints from "./pages/SalePoints";
+import ProductsDetails from "./pages/ProductsDetails";
 
 export default function App() {
   const [user, setUser] = useState(null);
@@ -65,6 +66,7 @@ export default function App() {
 				<Route path="/acceder" element={<LogIn/>}/>
 				<Route path="/registrarse" element={<Signup/>}/>
 				<Route path="/productos" element={<Products/>}/>
+				<Route path="/id/detalle" element={<ProductsDetails/>}/>
 				<Route path="/puntos-de-venta" element={<SalePoints/>}/>
       </Routes>
     </div>

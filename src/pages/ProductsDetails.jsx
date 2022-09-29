@@ -1,6 +1,5 @@
-import { useParams } from "react-router-dom"
-import { useState, useEffect } from "react";
-import axios from "axios";
+import React from 'react'
+import Products from './Products'
 import './auth.css'
 
 const products = [
@@ -19,8 +18,8 @@ const products = [
     href: '/detalleProducto',
     imageSrc: 'https://scontent.fcvj1-1.fna.fbcdn.net/v/t39.30808-6/298622218_2933792880246582_1732273584728815747_n.jpg?stp=dst-jpg_p960x960&_nc_cat=106&ccb=1-7&_nc_sid=a26aad&_nc_ohc=XbPdYEfe8ycAX-z3je4&_nc_ht=scontent.fcvj1-1.fna&oh=00_AT9zQez3QMe5Xh8_pqf1lqQh2jBkx4dWsupJdwOFdHxxJg&oe=6338D7D7',
     imageAlt: "Front of men's Basic Tee in black.",
-    price: '$750',
-    color: 'La mejor calidad en todas nuestras tintas chinas',
+    price: '$20peso',
+    color: 'Varios',
   },
 	{
     id: 3,
@@ -38,47 +37,27 @@ const products = [
     imageSrc: 'https://scontent.fcvj1-1.fna.fbcdn.net/v/t39.30808-6/272892751_2803563006602904_3918305066062819008_n.jpg?stp=dst-jpg_p960x960&_nc_cat=100&ccb=1-7&_nc_sid=a26aad&_nc_ohc=oB9j0cFf4uQAX97ZV73&_nc_ht=scontent.fcvj1-1.fna&oh=00_AT9Ym8UpGpKJEao66VvK5uyn1bIrnZ-imtc2ce4nXEkIRQ&oe=6338C614',
     imageAlt: "Front of men's Basic Tee in black.",
     price: '$950',
-    color: 'La paleta mas portatil y bonita en todo el mundo',
+    color: 'La mejor de las mejores',
   },
   // More products...
 ]
+const ProductsDetails = (props) => {
+	return (
+		<div className='product-detail'>
+			<div className='info'>
+			<h1 className='title'>{products[0].name}</h1>
+			<img className='img-details' src={products[0].imageSrc} alt={products[0].name} />
+			<h2>{products[0].price}</h2>
+			<h2 className='p-info'>{products[0].color}</h2>
+			</div>
+			<div className='info-container'>
+		<h1 className='title'>Info</h1>
+		<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sapiente velit suscipit illum iure? Odit ullam ducimus officiis. Voluptate quis, temporibus necessitatibus et nostrum a blanditiis sunt vitae tempore odio voluptatibus.</p>
+		<button className='button-info'>Comprar</button>
+			</div>
+		</div>
 
-export default function Products() {
-  return (
-    <div className="bg-white">
-      <div className="mx-auto max-w-2xl py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8">
-        <h2 className="text-2xl font-bold tracking-tight text-gray-900">Maquillaje</h2>
-
-        <div className="mt-6 grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
-          {products.map((product) => (
-						<div>
-            <div key={product.id} className="group relative">
-              <div className="min-h-80 aspect-w-1 aspect-h-1 w-full overflow-hidden rounded-md bg-gray-200 group-hover:opacity-75 lg:aspect-none lg:h-80">
-                <img
-                  src={product.imageSrc}
-                  alt={product.imageAlt}
-                  className="h-full w-full object-cover object-center lg:h-full lg:w-full"
-                />
-              </div>
-              <div className="mt-4 flex justify-between">
-                <div>
-                  <h3 className="text-sm text-gray-700">
-                    <a href={product.href}>
-                      <span aria-hidden="true" className="absolute inset-0" />
-                      {product.name}
-                    </a>
-                  </h3>
-                  <p className="mt-1 text-sm text-gray-500">{product.color}</p>
-                </div>
-                <p className="text-sm font-medium text-gray-900">{product.price}</p>
-              </div>
-            </div>
-							<button className="button-product"><a href="/carrito-compras">Comprar</a></button>
-						</div>
-          ))}
-        </div>
-      </div>
-    </div>
-		
-  )
+	)
 }
+
+export default ProductsDetails
