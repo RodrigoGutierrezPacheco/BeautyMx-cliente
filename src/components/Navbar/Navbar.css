@@ -1,11 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 nav {
   display: flex;
   padding: 1em;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  background: #282c34;
+  background-color:rgba(255, 202, 202);
   font-weight: 600;
 }
+
+
 
 .nav__projectName {
   color: #e4f9ff;
@@ -13,7 +17,7 @@ nav {
 }
 
 .authLink {
-  color: #61dafb;
+	color:rgb(201, 44, 57);
   text-decoration: none;
   transition: color 0.2s ease-in-out;
 }
@@ -45,4 +49,51 @@ nav {
 .nav-logoutbtn:hover {
   transform: scale(1.05);
   background-color: #d13e3e;
+}
+
+.beauty{
+	background-color: rgb(255, 202, 202);
+	color: white;
+}
+
+.beauty-logo{
+	height: 50px;
+	margin-right: 200px;
+}
+
+.beauty-nav{
+	background-color:rgba(255, 202, 202);
+	color:rgb(201, 44, 57);
+}
+
+.beauty-hamburguer{
+	background-color:rgba(255, 202, 202);
+	color:rgb(201, 44, 57);
+}
+.beauty-hamburguer2{
+	background-color:rgb(255, 255, 255);
+	color:rgb(201, 44, 57);
+}
+.beauty-hamburguer3{
+	background-color:rgb(255, 255, 255);
+	color:rgb(201, 44, 57);
+  border: 1px solid black;
+	width: 90%;
+	border-radius: 10px;
+}
+.back-white{
+	background-color: white;
+}
+
+
+.beauty-hamburguer:hover{
+	background-color:rgba(255, 202, 202);
+	color:rgb(201, 44, 57);
+}
+.beauty-nav + a:hover{
+	background-color:rgb(255, 202, 202);
+	color:rgb(201, 44, 57);
+}
+.user-photo{
+	background-color:rgb(255, 202, 202);
 }

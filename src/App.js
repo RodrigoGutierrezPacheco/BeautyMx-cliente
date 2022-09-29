@@ -1,10 +1,15 @@
 import { useEffect, useState } from "react";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, BrowserRouter } from "react-router-dom";
 import LoadingComponent from "./components/Loading";
 import Navbar from "./components/Navbar/Navbar";
 import { getLoggedIn, logout } from "./services/auth";
 import routes from "./config/routes";
 import * as USER_HELPERS from "./utils/userToken";
+import HomePage from "./pages/HomePage";
+import Signup from "./pages/Signup";
+import LogIn from "./pages/LogIn";
+import Products from "./pages/Products";
+import SalePoints from "./pages/SalePoints";
 
 export default function App() {
   const [user, setUser] = useState(null);
@@ -56,6 +61,11 @@ export default function App() {
         {routes({ user, authenticate, handleLogout }).map((route) => (
           <Route key={route.path} path={route.path} element={route.element} />
         ))}
+				<Route path="/" element={<HomePage/>}/>
+				<Route path="/acceder" element={<LogIn/>}/>
+				<Route path="/registrarse" element={<Signup/>}/>
+				<Route path="/productos" element={<Products/>}/>
+				<Route path="/puntos-de-venta" element={<SalePoints/>}/>
       </Routes>
     </div>
   );
