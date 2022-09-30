@@ -53,7 +53,8 @@ const ProductsDetails = (props) => {
 			<div className='info-container'>
 		<h1 className='title'>Info</h1>
 		<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sapiente velit suscipit illum iure? Odit ullam ducimus officiis. Voluptate quis, temporibus necessitatibus et nostrum a blanditiis sunt vitae tempore odio voluptatibus.</p>
-		<button className='button-info'>Comprar</button>
+		<button className='button-info'><a href="/carrito-de-compras">Comprar</a></button>
+		<button className='button-info1'><a href="/productos">Regresar</a></button>
 			</div>
 		</div>
 

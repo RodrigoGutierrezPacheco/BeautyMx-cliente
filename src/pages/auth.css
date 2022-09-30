@@ -75,6 +75,17 @@ button.button__submit {
 	font-weight: 700;
  }
 
+ .button-info1{
+	background-color: white;
+	color:red;
+	margin-top: 2%;
+	width: 10vw;
+	height: 5vh;
+	border-radius: 15px;
+	font-weight: 700;
+ }
+
+
  .button-product{
 	background-color: rgba(255, 202, 202, .8);
 	color:red;
@@ -86,7 +97,84 @@ button.button__submit {
 	border-radius: 15px;
 	font-weight: 700;
  }
+ .button-signup{
+	background-color: rgba(255, 202, 202, .8);
+	color:red;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-top: 2%;
+	width: 10vw;
+	height: 5vh;
+	border-radius: 15px;
+	font-weight: 700;
+	margin-left: 30%;
+	margin-top: 10%;
+ }
 
  .p-info{
 	font-size: 150%;
+ }
+
+ .sale-points{
+	margin-top: 2%;
+ }
+
+ .login{
+	display: flex;
+	justify-content: center;
+	margin-top: 2%;
+ }
+
+ .container-username{
+	display: flex;
+	flex-direction: column;
+	margin-left: 36%;
+	width: 30%;
+	border: 2px solid rgba(255, 202, 202, .8);
+	margin-top: 5%;
+	border-radius: 5px;
+	height: 200px;
+ }
+
+ .username{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	border-bottom: 1px solid pink;
+ }
+
+ .button-logout{
+	color:rgb(201, 44, 57);
+ }
+
+ .button-logout:hover{
+	color:white;
+ }
+
+ .products{
+	margin:2% 2%;
+ }
+
+ .beauty-logo{
+	margin-left: 20%;
+ }
+
+ .home-one{
+	display: flex;
+	flex-direction: row-reverse;
+	color: black;
+	font-weight: 600;
+ }
+ .home-one img{
+	width: 30%;
+ }
+ .home-two{
+	display: flex;
+	flex-direction: row;
+	color: black;
+	font-weight: 600;
+ }
+ .home-two img{
+	width: 30%;
  }

@@ -11,6 +11,7 @@ import LogIn from "./pages/LogIn";
 import Products from "./pages/Products";
 import SalePoints from "./pages/SalePoints";
 import ProductsDetails from "./pages/ProductsDetails";
+import ShoppingCard from "./pages/ShoppingCart";
 
 export default function App() {
   const [user, setUser] = useState(null);
@@ -63,11 +64,12 @@ export default function App() {
           <Route key={route.path} path={route.path} element={route.element} />
         ))}
 				<Route path="/" element={<HomePage/>}/>
-				<Route path="/acceder" element={<LogIn/>}/>
-				<Route path="/registrarse" element={<Signup/>}/>
+				<Route path="/acceder" element={<LogIn authenticate={authenticate}/>}/>
+				<Route path="/registrarse" element={<Signup authenticate={authenticate}/>}/>
 				<Route path="/productos" element={<Products/>}/>
 				<Route path="/id/detalle" element={<ProductsDetails/>}/>
 				<Route path="/puntos-de-venta" element={<SalePoints/>}/>
+				<Route path="/carrito-de-compras" element={<ShoppingCard/>}/>
       </Routes>
     </div>
   );

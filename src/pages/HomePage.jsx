@@ -28,6 +28,23 @@ export default function HomePage() {
           </div>
         </div>
       </div>
+			<div className="home-one">
+			<img src="https://scontent.fcvj1-1.fna.fbcdn.net/v/t39.30808-6/272892751_2803563006602904_3918305066062819008_n.jpg?stp=dst-jpg_p960x960&_nc_cat=100&ccb=1-7&_nc_sid=a26aad&_nc_ohc=me4B0DBZdFYAX_cToOz&_nc_ht=scontent.fcvj1-1.fna&oh=00_AT_ck5ECM8FPPVhwVk0oHX162x1jZsaKCy8NvWTuP5Zegg&oe=633AC054" alt="" />
+			<div>
+				<h2>Tenemos los Mejores productos!</h2>
+				<p>Productos de calidad, al mejor precio Lorem ipsum dolor, sit amet consectetur adipisicing elit. Hic explicabo modi nulla nobis omnis beatae mollitia exercitationem quo. Magnam, qui! Error ipsam quis quidem voluptates numquam, vitae facilis labore sit!</p>
+				<button><a href="/productos">Conoce todos nuestros productos</a></button>
+			</div>
+			</div>
+			<div className="home-two">
+			<img src="https://scontent.fcvj1-1.fna.fbcdn.net/v/t39.30808-6/272892751_2803563006602904_3918305066062819008_n.jpg?stp=dst-jpg_p960x960&_nc_cat=100&ccb=1-7&_nc_sid=a26aad&_nc_ohc=me4B0DBZdFYAX_cToOz&_nc_ht=scontent.fcvj1-1.fna&oh=00_AT_ck5ECM8FPPVhwVk0oHX162x1jZsaKCy8NvWTuP5Zegg&oe=633AC054" alt="" />
+			<div>
+				<h2>Tambien nos puedes encontrar en diferentes puntos de venta, conocelos!</h2>
+				<p>Productos de calidad, al mejor precio Lorem ipsum dolor, sit amet consectetur adipisicing elit. Hic explicabo modi nulla nobis omnis beatae mollitia exercitationem quo. Magnam, qui! Error ipsam quis quidem voluptates numquam, vitae facilis labore sit!</p>
+				<button><a href="/productos">Conoce todos nuestros productos</a></button>
+			</div>
+			</div>
     </div>
+		
   )
 }

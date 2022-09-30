@@ -17,8 +17,14 @@ const Navbar = (props) => {
             <Link to={PATHS.PROTECTEDPAGE} className="authLink">
               Protected Page
             </Link>
-            <button className="nav-logoutbtn" onClick={props.handleLogout}>
-              Logout
+						<Link to={"/productos"} className="authLink">
+             Productos
+            </Link>
+						<Link to={"/puntos-de-venta"} className="authLink">
+             Puntos de Venta
+            </Link>
+            <button className="button-logout" onClick={props.handleLogout}>
+              Cerrar Sesion
             </button>
           </>
         ) : (
@@ -38,6 +44,7 @@ const Navbar = (props) => {
           </>
         )}
       </div>
+			<img src="../../public/images/beauty-ico.png" alt="" />
     </nav>
   );
 };
