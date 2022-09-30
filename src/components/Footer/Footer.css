@@ -1,0 +1,32 @@
+.footer{
+	display: flex;
+	margin-left: 0vw;
+	}
+
+.logo{
+	width: 3em;
+}
+
+.logo-insta{
+	width: 2.5em;
+	margin-top: .4%;
+}
+
+.logo-github{
+	width: 2.5em;
+	margin-top: .4em;
+}
+
+.github{
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-end;
+}
+
+.deployed{
+	margin-right: .5em;
+}
+
+.beautymx-footer{
+	margin-left: 1em;
+}

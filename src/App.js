@@ -12,6 +12,8 @@ import Products from "./pages/Products";
 import SalePoints from "./pages/SalePoints";
 import ProductsDetails from "./pages/ProductsDetails";
 import ShoppingCard from "./pages/ShoppingCart";
+import Footer from "./components/Footer/Footer";
+import DataBase from "./pages/DataBase";
 
 export default function App() {
   const [user, setUser] = useState(null);
@@ -71,6 +73,7 @@ export default function App() {
 				<Route path="/puntos-de-venta" element={<SalePoints/>}/>
 				<Route path="/carrito-de-compras" element={<ShoppingCard/>}/>
       </Routes>
+    <Footer/>
     </div>
   );
 }
