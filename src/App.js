@@ -14,6 +14,7 @@ import ProductsDetails from "./pages/ProductsDetails";
 import ShoppingCard from "./pages/ShoppingCart";
 import Footer from "./components/Footer/Footer";
 import DataBase from "./pages/DataBase";
+import AddProduct from "./pages/AddProduct";
 
 export default function App() {
   const [user, setUser] = useState(null);
@@ -69,9 +70,11 @@ export default function App() {
 				<Route path="/acceder" element={<LogIn authenticate={authenticate}/>}/>
 				<Route path="/registrarse" element={<Signup authenticate={authenticate}/>}/>
 				<Route path="/productos" element={<Products/>}/>
-				<Route path="/id/detalle" element={<ProductsDetails/>}/>
+				<Route path="/producto/:id" element={<ProductsDetails/>}/>
 				<Route path="/puntos-de-venta" element={<SalePoints/>}/>
 				<Route path="/carrito-de-compras" element={<ShoppingCard/>}/>
+				<Route path="/base-de-datos" element={<DataBase/>}/>
+				<Route path="/añadir-producto" element={<AddProduct/>}/>
       </Routes>
     <Footer/>
     </div>

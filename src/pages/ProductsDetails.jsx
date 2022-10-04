@@ -1,5 +1,8 @@
 import React from 'react'
 import Products from './Products'
+import { useState, useEffect } from "react";
+import axios from "axios";
+import { Link,useParams } from "react-router-dom";
 import './auth.css'
 
 const products = [
@@ -41,24 +44,32 @@ const products = [
   },
   // More products...
 ]
-const ProductsDetails = (props) => {
-	return (
-		<div className='product-detail'>
-			<div className='info'>
-			<h1 className='title'>{products[0].name}</h1>
-			<img className='img-details' src={products[0].imageSrc} alt={products[0].name} />
-			<h2>{products[0].price}</h2>
-			<h2 className='p-info'>{products[0].color}</h2>
-			</div>
-			<div className='info-container'>
-		<h1 className='title'>Info</h1>
-		<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sapiente velit suscipit illum iure? Odit ullam ducimus officiis. Voluptate quis, temporibus necessitatibus et nostrum a blanditiis sunt vitae tempore odio voluptatibus.</p>
-		<button className='button-info'><a href="/carrito-de-compras">Comprar</a></button>
-		<button className='button-info1'><a href="/productos">Regresar</a></button>
-			</div>
+function ProductsDetails (props) {
+  const [product, setProject] = useState(null);
+  const {id} = useParams();
+	console.log(product);
+
+	//http://localhost:5005/api/projectt/id
+	const getProject = () => {        
+    axios
+      .get(`http://localhost:5005/productos/${id}`)
+      .then((response) => {
+				console.log("RESPUESTA---->",response)
+        const oneProject = response.data;
+        setProject(oneProject);
+      })
+      .catch((error) => console.log(error));
+  };
+
+			useEffect(() => {
+				getProject();
+			}, []);
+  
+  return (
+    <div>
+			<h1>{product.productname}</h1>
 		</div>
-
-	)
+  );
 }
-
+ 
 export default ProductsDetails

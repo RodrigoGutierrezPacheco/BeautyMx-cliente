@@ -1,6 +1,3 @@
-/* This example requires Tailwind CSS v2.0+ */
-
-
 export default function HomePage() {
   return (
     <div className="bg-white-50 body" >
