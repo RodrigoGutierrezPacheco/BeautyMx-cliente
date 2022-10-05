@@ -1,3 +1,7 @@
+import { Button, Modal, Typography } from "@mui/material"
+import { Box } from "@mui/system"
+import { useState } from "react"
+
 const stores = [
   {
     name: 'Espacio Pink-San Diego',
@@ -23,6 +27,9 @@ const stores = [
 ]
 
 export default function PointsOfSale() {
+	const [openE,setOpenE] = useState(false)
+	const [openP,setOpenP] = useState(false)
+	const [openF,setOpenF] = useState(false)
   return (
 		<div className="sale-points">
     <div className="bg-white-100">
@@ -48,9 +55,48 @@ export default function PointsOfSale() {
                   </a>
                 </h3>
                 <p className="text-base font-semibold text-gray-900">{stores.description}</p>
-								<button className="button-product">Informacion</button>
+			
+								{/* <button className="button-product">Informacion</button> */}
               </div>
             ))}
+						<Button onClick={()=> setOpenE(true)} className="btn-espaciopink">Informacion</Button>	
+					      <Modal open={openE} onClose={()=>setOpenE(false)}>
+                 <Box position="absolute" className="modal">
+									<div className="modal-container">
+										<h1 className="title">Espacio Pink-San Diego</h1>
+										<img src="https://cdn.shopify.com/s/files/1/0562/0213/3680/articles/Espacio_Pink_1500x.jpg?v=1646861033" alt="" className="espaciopink" />
+										<p><b>Horario:</b> Lunes-viernes de 10:30-18:30 y Sabados de 10:30-14:30</p>
+										<p><b>Direccion:</b> Av. San Diego 300, zona 1, Vista Hermosa, 62290 Cuernavaca, Mor.</p>
+									<Button onClick={()=> setOpenE(false)}>Volver</Button>
+									</div>
+								 </Box>
+								</Modal>
+								
+								<Button onClick={()=> setOpenP(true)} className="btn-espaciopink">Informacion</Button>
+								<Modal open={openP} onClose={()=>setOpenP(false)}>
+                 <Box position="absolute" className="modal">
+									<div className="modal-container">
+										<h1 className="title">Plaza Cuernavaca</h1>
+										<img src="https://www.mallsmexico.com/uploads/plazas/logos/1754_PlazaCuernavaca.gif?v=1664986520" alt="" className="espaciopink" />
+										<p><b>Horario:</b> Todos los dias de 10:30-19:30</p>
+										<p><b>Direccion: </b> Av Vicente Guerrero #110, Lomas de la Selva, 62270 Cuernavaca, Mor.</p>
+									<Button onClick={()=> setOpenP(false)}>Volver</Button>
+									</div>
+								 </Box>
+								</Modal>
+
+								<Button onClick={()=> setOpenF(true)} className="btn-espaciopink">Informacion</Button>
+								<Modal open={openF} onClose={()=>setOpenF(false)}>
+                 <Box position="absolute" className="modal">
+									<div className="modal-container">
+										<h1 className="title">Puertas Abiertas-Forum</h1>
+										<img src="https://static.wixstatic.com/media/9bf15f_f03b6acdd9ff445d9a12e4a6ed2ca73e~mv2.png/v1/fill/w_1080,h_1080,al_c/9bf15f_f03b6acdd9ff445d9a12e4a6ed2ca73e~mv2.png" alt="" className="espaciopink" />
+										<p><b>Horario:</b> Lunes-viernes de 10:30-18:30 y Sabados de 10:30-14:30</p>
+										<p><b>Direccion:</b> C. Jacarandas 103, Ricardo Flores Magon, 62370 Cuernavaca, Mor</p>
+									<Button onClick={()=> setOpenF(false)} className="goback">Volver</Button>
+									</div>
+								 </Box>
+								</Modal>
           </div>
         </div>
       </div>
@@ -58,4 +104,3 @@ export default function PointsOfSale() {
 		</div>
   )
 }
-

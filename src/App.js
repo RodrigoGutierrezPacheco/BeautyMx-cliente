@@ -76,8 +76,7 @@ export default function App() {
 				<Route path="/productos/:id/editar" element={<EditProduct/>}/>
 				<Route path="/puntos-de-venta" element={<SalePoints/>}/>
 				<Route path="/carrito-de-compras" element={<ShoppingCard/>}/>
-				<Route path="/base-de-datos" element={<DataBase/>}/>
-				<Route path="/añadir-producto" element={<AddProduct/>}/>
+				<Route path="/base-de-datos" element={<DataBase/>} authenticate={authenticate}/>
       </Routes>
     <Footer/>
     </div>

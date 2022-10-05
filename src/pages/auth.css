@@ -200,6 +200,17 @@ button.button__submit {
 	font-weight: 600;
 	border: 2px pink solid;
  }
+
+ .homeone{
+ margin-left: 1em;
+ margin-right: 1em;
+ }
+
+ .img-home-one{
+	margin-right: 1em;
+ }
+
+
  .home-one img{
 	width: 30%;
  }
@@ -318,8 +329,8 @@ button.button__submit {
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	margin-left: 30em;
-	margin-top: 2em;
+	margin-left: 33em;
+	margin-top: 1em;
 	height: 35em;
  }
 
@@ -342,6 +353,7 @@ button.button__submit {
  .products-details{
 	display: flex;
 	flex-direction: row;
+	margin: 1.5em;
  }
 
  .details{
@@ -371,4 +383,31 @@ button.button__submit {
 	display: flex;
 	justify-content: center;
 	margin-top: 10em;
+ }
+
+ .modal{
+	background-color:pink;
+	width: 30em;
+	height: 30em;
+	margin-left: 33em;
+	margin-top: 8em;
+	border-radius: 2em;
+ }
+
+ .modal-container{
+	margin-left: 1em;
+	margin-top: 1em;
+ }
+
+ .espaciopink{
+	width: 15em;
+	border-radius: 2em;
+ }
+
+ .img-database{
+	width: 2em;
+ }
+
+ .allProducts{
+	margin: 1.5em;
  }

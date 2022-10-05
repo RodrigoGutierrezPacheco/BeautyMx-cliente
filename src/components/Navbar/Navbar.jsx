@@ -12,7 +12,7 @@ const Navbar = (props) => {
 
 
       <div className="nav__authLinks">
-        {props.user ? (
+        {props.user? (       
           <>
             {/* <Link to={PATHS.PROTECTEDPAGE} className="authLink">
               Protected Page
@@ -23,9 +23,13 @@ const Navbar = (props) => {
 						<Link to={"/puntos-de-venta"} className="authLink">
              Puntos de Venta
             </Link>
+						<Link to={"/base-de-datos"} className="authLink">
+             Base de Datos
+            </Link>
             <button className="button-logout" onClick={props.handleLogout}>
               Cerrar Sesion
             </button>
+
           </>
         ) : (
           <>

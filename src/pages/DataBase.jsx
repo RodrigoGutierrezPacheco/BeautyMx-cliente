@@ -43,7 +43,7 @@ const DataBase = (props) => {
 		const requestBody = {productname,description,brand,categoryone,categorytwo,subcategory,price,imageUrl};
 
 		axios
-		.post(`${API_URL}/productos`,requestBody)
+		.post(`${process.env.REACT_APP_SERVER_URL}/productos`,requestBody)
 		.then((response)=>{
 			setProductname("");
 			setDescription("");
@@ -53,7 +53,6 @@ const DataBase = (props) => {
 			setPrice("");
 			setImageUrl("");
 			alert("Producto creado");
-			// props.refreshProjects()
 		})
 		.catch((error)=>console.log(error))
 	}
@@ -135,7 +134,7 @@ const DataBase = (props) => {
 													id="inputGroupFile02"
 												  required/>
 										<button type="submit" className='btn-database'>Subir</button>
-                    <img src={imageUrl} alt="" />
+                    <img src={imageUrl} alt="" className='img-database'/>
 
 					</div>
 	 </div>

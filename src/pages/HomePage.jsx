@@ -11,8 +11,8 @@ export default function HomePage() {
         </div>
       </div>
 			<div className="home-one">
-			<img src="https://scontent.fcvj1-1.fna.fbcdn.net/v/t39.30808-6/272892751_2803563006602904_3918305066062819008_n.jpg?stp=dst-jpg_p960x960&_nc_cat=100&ccb=1-7&_nc_sid=a26aad&_nc_ohc=me4B0DBZdFYAX_cToOz&_nc_ht=scontent.fcvj1-1.fna&oh=00_AT_ck5ECM8FPPVhwVk0oHX162x1jZsaKCy8NvWTuP5Zegg&oe=633AC054" alt="" />
-			<div>
+			<img className="img-home-one" src="https://scontent.fcvj1-1.fna.fbcdn.net/v/t39.30808-6/272892751_2803563006602904_3918305066062819008_n.jpg?stp=dst-jpg_p960x960&_nc_cat=100&ccb=1-7&_nc_sid=a26aad&_nc_ohc=me4B0DBZdFYAX_cToOz&_nc_ht=scontent.fcvj1-1.fna&oh=00_AT_ck5ECM8FPPVhwVk0oHX162x1jZsaKCy8NvWTuP5Zegg&oe=633AC054" alt="" />
+			<div className="homeone">
 				<h2 className="title">Manejamos las mejores marcas!</h2>
 				<p>Productos de calidad, al mejor precio Lorem ipsum dolor, sit amet consectetur adipisicing elit. Hic explicabo modi nulla nobis omnis beatae mollitia exercitationem quo. Magnam, qui! Error ipsam quis quidem voluptates numquam, vitae facilis labore sit!</p>
 				<button className="btn-home-one"><a href="/productos">Conoce todos nuestros productos</a></button>

@@ -69,14 +69,22 @@ const EditProduct = (props) => {
 		console.log("SUBIENDO DATOS")
     e.preventDefault();
 
-		const requestBody = [productname,description,brand,categoryone,categorytwo,subcategory,price,imageUrl];
+		const requestBody = {productname,description,brand,categoryone,categorytwo,subcategory,price,imageUrl};
 
 		axios
 		.put(`${process.env.REACT_APP_SERVER_URL}/productos/${id}`, requestBody)
-		.then(() => {
-			navigate(`/productos/${id}`)
-		.catch((error)=>console.log(error))
-	});
+		.then((response) => {
+			console.log(response)
+			setProductname("");
+			setDescription("");
+			setBrand("");
+			setCategoryone("");
+			setCategorytwo("");
+			setPrice("");
+			setImageUrl("");
+			alert("Producto creado");
+		})
+		.catch((error)=>console.log("ERROOOR--->",error))
 	}
 
 	return (
@@ -105,7 +113,7 @@ const EditProduct = (props) => {
 												<option value="Elf">Elf</option>
 												<option value="Foreo">Foreo</option>
 												<option value="Huda Beauty">Huda Beauty</option>
-												<option value="Morphe">Morphe</option>
+									 			<option value="Morphe">Morphe</option>
 												<option value="The Ordinary">The Ordinary</option>
 												<option value="Too Faced">Too Faced</option>
                     </select>
@@ -151,7 +159,6 @@ const EditProduct = (props) => {
 													onChange={(e) => handleFileUpload(e)}
 										      type="file"  
                           name="imageUrl"
-                          // value={imageUrl}
 													class="form-control" 
 													id="inputGroupFile02"
 												  />
