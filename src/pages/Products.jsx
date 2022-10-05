@@ -36,7 +36,7 @@ function Products(props) {
 
 										<div className="min-h-80 aspect-w-1 aspect-h-1 w-full overflow-hidden rounded-md bg-gray-200 group-hover:opacity-75 lg:aspect-none lg:h-80">
 											<img
-												src={product.image}
+												src={product.imageUrl}
 												alt={product.imageAlt}
 												className="h-full w-full object-cover object-center lg:h-full lg:w-full"
 												/>
@@ -53,8 +53,9 @@ function Products(props) {
 											<p className="text-sm font-medium text-gray-900">${product.price}.00</p>
 										</div>
 										<div>
-											
-										<button className="button-product"><a href="/carrito-de-compras">Comprar</a></button>
+											{/* <Link to="/carrito-de-compras"> */}
+										<button className="button-product" onClick={()=>console.log(product)}>Comprar</button>
+											{/* </Link> */}
 										</div>
 									</div>
 								)}

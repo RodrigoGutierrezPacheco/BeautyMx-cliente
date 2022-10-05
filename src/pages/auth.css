@@ -334,3 +334,41 @@ button.button__submit {
 	align-items: center;
 	margin-top: 1.5em;
  }
+
+ .image-details{
+	width: 30em;
+ }
+
+ .products-details{
+	display: flex;
+	flex-direction: row;
+ }
+
+ .details{
+	margin-left: 2.5em;
+	margin-top: 1;
+ }
+
+ .brand{
+  margin-left: 5em;
+ }
+
+ .btn-details{
+	background-color: red;
+	border-radius: 5px;
+	width: 5em;
+	color: white;
+	display: flex;
+	justify-content: center;
+	margin-top: 1em;
+ }
+
+ .btn-details-buy{
+	background-color: red;
+	border-radius: 5px;
+	width: 5em;
+	color: white;
+	display: flex;
+	justify-content: center;
+	margin-top: 10em;
+ }

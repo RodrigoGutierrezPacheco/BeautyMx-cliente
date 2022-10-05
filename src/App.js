@@ -15,6 +15,7 @@ import ShoppingCard from "./pages/ShoppingCart";
 import Footer from "./components/Footer/Footer";
 import DataBase from "./pages/DataBase";
 import AddProduct from "./pages/AddProduct";
+import EditProduct from "./pages/EditProduct";
 
 export default function App() {
   const [user, setUser] = useState(null);
@@ -52,6 +53,7 @@ export default function App() {
     });
   }
 
+
   function authenticate(user) {
     setUser(user);
   }
@@ -70,7 +72,8 @@ export default function App() {
 				<Route path="/acceder" element={<LogIn authenticate={authenticate}/>}/>
 				<Route path="/registrarse" element={<Signup authenticate={authenticate}/>}/>
 				<Route path="/productos" element={<Products/>}/>
-				<Route path="/producto/:id" element={<ProductsDetails/>}/>
+				<Route path="/productos/:id" element={<ProductsDetails/>}/>
+				<Route path="/productos/:id/editar" element={<EditProduct/>}/>
 				<Route path="/puntos-de-venta" element={<SalePoints/>}/>
 				<Route path="/carrito-de-compras" element={<ShoppingCard/>}/>
 				<Route path="/base-de-datos" element={<DataBase/>}/>

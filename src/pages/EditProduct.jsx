@@ -1,12 +1,16 @@
 import React from 'react'
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useState,useEffect } from "react";
+import { useNavigate,useParams } from "react-router-dom";
 import axios from "axios";
 import service from "../api/service";
 
 const API_URL = "http://localhost:5005";
 
-const DataBase = (props) => {
+const EditProduct = (props) => {
+	const navigate = useNavigate();
+	const [product, setProject] = useState(null);
+  const {id} = useParams();
+	// console.log("USEPARAMS--->",useParams)
 	// console.log("PROPS-----",props)
 	const [productname, setProductname] = useState("");
 	const [description, setDescription] = useState("");
@@ -16,6 +20,31 @@ const DataBase = (props) => {
 	const [subcategory, setSubcategory] = useState("");
 	const [price, setPrice] = useState("");
 	const [imageUrl, setImageUrl] = useState("");
+
+	const getProject = () => {     
+    axios
+      .get( `${process.env.REACT_APP_SERVER_URL}/productos/${id}`)
+      .then((response) => {
+				// console.log("RESPUESTA---->",response)
+        const oneProject = response.data;
+        setProject(oneProject);
+				setProductname(oneProject.productname)
+				setDescription(oneProject.description)
+				setBrand(oneProject.brand)
+				setCategoryone(oneProject.categoryone)
+				setCategorytwo(oneProject.categorytwo)
+				setSubcategory(oneProject.subcategory)
+				setPrice(oneProject.price)
+				// console.log(setProductname)
+				// console.log("ONEPROJECT---->>>>",oneProject)
+      })
+      .catch((error) => console.log(error));
+  };
+
+	useEffect(() => {
+		getProject();
+	}, []);
+
 
 	const handleFileUpload = (e) => {
     console.log("The file to be uploaded is: ", e.target.files[0]);
@@ -40,37 +69,29 @@ const DataBase = (props) => {
 		console.log("SUBIENDO DATOS")
     e.preventDefault();
 
-		const requestBody = {productname,description,brand,categoryone,categorytwo,subcategory,price,imageUrl};
+		const requestBody = [productname,description,brand,categoryone,categorytwo,subcategory,price,imageUrl];
 
 		axios
-		.post(`${API_URL}/productos`,requestBody)
-		.then((response)=>{
-			setProductname("");
-			setDescription("");
-			setBrand("");
-			setCategoryone("");
-			setCategorytwo("");
-			setPrice("");
-			setImageUrl("");
-			alert("Producto creado");
-			// props.refreshProjects()
-		})
+		.put(`${process.env.REACT_APP_SERVER_URL}/productos/${id}`, requestBody)
+		.then(() => {
+			navigate(`/productos/${id}`)
 		.catch((error)=>console.log(error))
+	});
 	}
 
 	return (
 		<div>
-    <h1 className='title data'>Base de Datos</h1>
+    <h1 className='title data'>Editar Producto</h1>
 		<form onSubmit={handleSubmit}>
 	 <div className='container-database'>
 		<div className='data-base'>
 			<label htmlFor="input-product" required>Producto</label>
-        <input placeholder="Nombre producto" type="text"
+        <input type="text"
           name="productname"
           value={productname}
           onChange={(e) => setProductname(e.target.value)}  required/>
 				<label htmlFor="input-password">Descripcion producto</label>
-        <input placeholder="Nombre modelo" type="text" name="description" value={description} onChange={(e) => setDescription(e.target.value)} required/>
+        <input type="text" name="description" value={description} onChange={(e) => setDescription(e.target.value)} required/>
 
 				<label >Marca</label>
                     <select type="text"
@@ -94,7 +115,7 @@ const DataBase = (props) => {
           name="categoryone"
           value={categoryone}
           onChange={(e) => setCategoryone(e.target.value)} required>
-                        <option value="">-</option>
+                        <option value=""></option>
                         <option value="Maquillaje">Maquillaje</option>
                         <option value="Cuidado para la piel">Cuidado de la piel</option>
 												<option value="Otros">Otros</option>
@@ -122,7 +143,7 @@ const DataBase = (props) => {
 												<option value="Labial">Labial</option>
                     </select>
 										<label htmlFor="input-password">Precio</label>
-                    <input placeholder="$100.00" name="price"
+                    <input name="price"
                      value={price}
                      onChange={(e) => setPrice(e.target.value)}/>
 										<label htmlFor="">Imagen Producto</label>
@@ -133,9 +154,9 @@ const DataBase = (props) => {
                           // value={imageUrl}
 													class="form-control" 
 													id="inputGroupFile02"
-												  required/>
-										<button type="submit" className='btn-database'>Subir</button>
-                    <img src={imageUrl} alt="" />
+												  />
+										<button type="submit" className='btn-database'>Actualizar</button>
+                    <img src={imageUrl} alt="" width={20} />
 
 					</div>
 	 </div>
@@ -145,4 +166,4 @@ const DataBase = (props) => {
 	)
 }
 
-export default DataBase
+export default EditProduct;
