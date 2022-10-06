@@ -14,7 +14,7 @@ function ProductsDetails (props) {
   const {id} = useParams();
 	// console.log("PROOOPS------>",props);
 
-	//http://localhost:5005/api/projectt/id
+
 	const getProject = () => {        
     axios
       .get( `${process.env.REACT_APP_SERVER_URL}/productos/${id}`)
@@ -37,7 +37,7 @@ function ProductsDetails (props) {
            navigate("/productos");
 				})
 				.catch(error=>console.log(error))
-				console.log(id)
+				// console.log(id)
 			}
         
   return (
@@ -46,14 +46,16 @@ function ProductsDetails (props) {
         <>
 				<div>
           <h1 className='title'>{product.categoryone}</h1>
+					<h1>{product.productname}</h1>
 					<img src={product.imageUrl} alt="" className='image-details'/>
 				</div>
-				<div className='details'>
+			<div className='details'>
 					<h1 className='title brand'>{product.brand}</h1>
 					<h2>Este es un producto para {product.categorytwo}</h2>
           <p>{product.description}</p>
 					<p>De la marca {product.brand}</p>
 					<p>${product.price}.00</p>
+				<div className='btns'>
 					<Link to="/carrito-de-compras">
 					<button className='btn-details-buy' onClick={()=>console.log(product)}>Comprar</button>
 					</Link>
@@ -61,10 +63,11 @@ function ProductsDetails (props) {
 				<button className='btn-details'>Regresar</button>
 					</Link>
 					<Link to = {`/productos/${id}/editar`}  >
-					<button>Editar</button>
+					<button className='btn-details'>Editar</button>
 					</Link>
-					<button onClick={deleteProduct}>Eliminar</button>
+					<button className='btn-details' onClick={deleteProduct}>Eliminar</button>
 				</div>
+			</div>
         </>
       )}
 		</div>

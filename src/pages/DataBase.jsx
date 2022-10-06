@@ -1,13 +1,18 @@
 import React from 'react'
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate,useEffect } from "react-router-dom";
 import axios from "axios";
 import service from "../api/service";
-
-const API_URL = "http://localhost:5005";
+import ProductCreated from '../components/ProductCreated/ProductCreated';
+import { Stack } from '@mui/system';
+import { Navigate,Link } from "react-router-dom";
+import { Alert,AlertTitle,Button } from '@mui/material';
+import SuccesAlert from '../components/SuccesAlert/SuccesAlert';
+const API_URL = `${process.env.REACT_APP_SERVER_URL}`;
 
 const DataBase = (props) => {
 	// console.log("PROPS-----",props)
+	const[showAlert,setShowAlert] = useState(false);
 	const [productname, setProductname] = useState("");
 	const [description, setDescription] = useState("");
 	const [brand, setBrand] = useState("");
@@ -52,7 +57,7 @@ const DataBase = (props) => {
 			setCategorytwo("");
 			setPrice("");
 			setImageUrl("");
-			alert("Producto creado");
+			setShowAlert(true);
 		})
 		.catch((error)=>console.log(error))
 	}
@@ -60,6 +65,7 @@ const DataBase = (props) => {
 	return (
 		<div>
     <h1 className='title data'>Base de Datos</h1>
+		{showAlert && <SuccesAlert/>}
 		<form onSubmit={handleSubmit}>
 	 <div className='container-database'>
 		<div className='data-base'>

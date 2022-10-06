@@ -337,8 +337,8 @@ button.button__submit {
  .btn-database{
 	background-color: red;
 	border-radius: 5px;
-	width: 32%;
-	height: 10%;
+	width: 5em;
+	height: 1.5em;
 	color: white;
 	display: flex;
 	justify-content: center;
@@ -348,6 +348,7 @@ button.button__submit {
 
  .image-details{
 	width: 30em;
+	border-radius: 2em;
  }
 
  .products-details{
@@ -410,4 +411,13 @@ button.button__submit {
 
  .allProducts{
 	margin: 1.5em;
+ }
+
+ .btns-edit{
+	display: flex;
+	justify-content: space-around;
+ }
+
+ .btns{
+	margin-top: 10;
  }

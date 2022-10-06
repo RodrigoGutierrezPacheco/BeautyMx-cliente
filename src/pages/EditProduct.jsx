@@ -1,17 +1,23 @@
 import React from 'react'
-import { useState,useEffect } from "react";
-import { useNavigate,useParams } from "react-router-dom";
+import { useState,useEffect} from "react";
+import { Navigate, useNavigate,useParams,Link } from "react-router-dom";
 import axios from "axios";
 import service from "../api/service";
+import { Alert,AlertTitle,Button } from '@mui/material';
+import Stack from '@mui/material/Stack';
+import SueccesAlert from '../components/SuccesAlert/SuccesAlert';
 
-const API_URL = "http://localhost:5005";
+
+const API_URL = `${process.env.REACT_APP_SERVER_URL}`;
 
 const EditProduct = (props) => {
+	console.log(props)
 	const navigate = useNavigate();
 	const [product, setProject] = useState(null);
   const {id} = useParams();
 	// console.log("USEPARAMS--->",useParams)
 	// console.log("PROPS-----",props)
+	const[showAlert,setShowAlert] = useState(false);
 	const [productname, setProductname] = useState("");
 	const [description, setDescription] = useState("");
 	const [brand, setBrand] = useState("");
@@ -82,14 +88,15 @@ const EditProduct = (props) => {
 			setCategorytwo("");
 			setPrice("");
 			setImageUrl("");
-			alert("Producto creado");
+			setShowAlert(true);
 		})
-		.catch((error)=>console.log("ERROOOR--->",error))
+		.catch((error)=>console.log(error))
 	}
 
 	return (
 		<div>
     <h1 className='title data'>Editar Producto</h1>
+		{showAlert && <SueccesAlert/>}
 		<form onSubmit={handleSubmit}>
 	 <div className='container-database'>
 		<div className='data-base'>
@@ -162,7 +169,12 @@ const EditProduct = (props) => {
 													class="form-control" 
 													id="inputGroupFile02"
 												  />
-										<button type="submit" className='btn-database'>Actualizar</button>
+													<div className='btns-edit'>
+										<button type="submit" className='btn-database' onClick={<SueccesAlert/>}>Actualizar</button>
+										<Link to={`/productos/${id}`}>
+										<button className='btn-database'>Regresar</button>
+										</Link>
+													</div>
                     <img src={imageUrl} alt="" width={20} />
 
 					</div>

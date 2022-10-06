@@ -4,9 +4,10 @@ import axios from "axios";
 import DataBase from "./DataBase";
 import { Link } from "react-router-dom";
 import './auth.css'
-const API_URL = "http://localhost:5005";
+const API_URL = `${process.env.REACT_APP_SERVER_URL}`
 
 function Products(props) {
+	console.log(props)
   const [products, setProducts] = useState([]);
 
   const getAllProducts = () => {
@@ -53,9 +54,9 @@ function Products(props) {
 											<p className="text-sm font-medium text-gray-900">${product.price}.00</p>
 										</div>
 										<div>
-											{/* <Link to="/carrito-de-compras"> */}
-										<button className="button-product" onClick={()=>console.log(product)}>Comprar</button>
-											{/* </Link> */}
+											<Link to={`/productos/${product._id}`}>
+										<button className="button-product">Informacion</button>
+											</Link>
 										</div>
 									</div>
 								)}

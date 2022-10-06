@@ -4,7 +4,7 @@ import axios from "axios";
 import DataBase from "./DataBase";
 import { Link } from "react-router-dom";
 import './auth.css'
-const API_URL = "http://localhost:5005";
+const API_URL = `${process.env.REACT_APP_SERVER_URL}`;
 
 function Products(props) {
   const [products, setProducts] = useState([]);

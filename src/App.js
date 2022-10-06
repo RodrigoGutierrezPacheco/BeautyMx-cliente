@@ -72,8 +72,8 @@ export default function App() {
 				<Route path="/acceder" element={<LogIn authenticate={authenticate}/>}/>
 				<Route path="/registrarse" element={<Signup authenticate={authenticate}/>}/>
 				<Route path="/productos" element={<Products/>}/>
-				<Route path="/productos/:id" element={<ProductsDetails/>}/>
-				<Route path="/productos/:id/editar" element={<EditProduct/>}/>
+				<Route path="/productos/:id" element={<ProductsDetails/>} user={user}/>
+				<Route path="/productos/:id/editar" element={<EditProduct/>} user={user}/>
 				<Route path="/puntos-de-venta" element={<SalePoints/>}/>
 				<Route path="/carrito-de-compras" element={<ShoppingCard/>}/>
 				<Route path="/base-de-datos" element={<DataBase/>} authenticate={authenticate}/>
