@@ -177,10 +177,10 @@ const EditProduct = (props) => {
 													</div>
                     <img src={imageUrl} alt="" width={20} />
 
-					</div>
-	 </div>
-									</form>
-		</div>
+					 </div>
+	        </div>
+				 </form>
+		    </div>
 		
 	)
 }

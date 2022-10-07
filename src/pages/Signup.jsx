@@ -45,7 +45,7 @@ export default function Signup({ authenticate }) {
     <div className="margin-top-signup">
 			<div className="login-one">
       <h1 className="title login">Registrate</h1>
-			<img className="logo-login" src="https://scontent.fcvj1-1.fna.fbcdn.net/v/t1.6435-9/47309432_1998538887105324_4162835822594228224_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=174925&_nc_ohc=YXqg8sqOh4IAX_tnScL&_nc_ht=scontent.fcvj1-1.fna&oh=00_AT_BGSo7JnGegyiAgrocC7cMignycCXxraUB7U8XuYQP1A&oe=635DC7CE" alt="" />
+			<img className="logo-login" src="images/beauty-ico.png" alt="" />
 			</div>
       <form onSubmit={handleFormSubmission} className="auth__form container-username">
 			<div className="username">
