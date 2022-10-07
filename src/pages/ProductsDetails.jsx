@@ -56,9 +56,6 @@ function ProductsDetails (props) {
 					<p>De la marca {product.brand}</p>
 					<p>${product.price}.00</p>
 				<div className='btns'>
-					<Link to="/carrito-de-compras">
-					<button className='btn-details-buy' onClick={()=>console.log(product)}>Comprar</button>
-					</Link>
 					<Link to="/productos">
 				<button className='btn-details'>Regresar</button>
 					</Link>

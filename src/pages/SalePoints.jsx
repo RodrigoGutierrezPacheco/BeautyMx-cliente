@@ -7,21 +7,21 @@ const stores = [
     name: 'Espacio Pink-San Diego',
     description: 'Horario: Lunes-Viernes de 10:30-18:30 y Sabados de 10:30-14:30',
     imageSrc: 'images/espaciopink-logo.png',
-    imageAlt: 'Desk with leather desk pad, walnut desk organizer, wireless keyboard and mouse, and porcelain mug.',
+    imageAlt: 'Espacio Pink - San Diego',
     href:"#",
   },
   {
     name: 'Plaza Cuernavaca',
     description: 'Horario: Todos los dias de 10:30-19:30 .................................',
     imageSrc: 'images/plazacuernavaca-logo.jpg',
-    imageAlt: 'Wood table with porcelain mug, leather journal, brass pen, leather key ring, and a houseplant.',
+    imageAlt: 'Plaza Cuernavaca',
     href: '#',
   },
   {
     name: 'Puertas Abiertas-Forum Cuernavaca',
     description: 'Horario: Todos los dias de 10:30-19:30  .................................',
     imageSrc: 'images/puertas.jpg',
-    imageAlt: 'Collection of four insulated travel bottles on wooden shelf.',
+    imageAlt: '¨Puertas Abiertas - Forum ',
     href: '#',
   },
 ]
@@ -46,13 +46,10 @@ export default function PointsOfSale() {
                     alt={stores.imageAlt}
                     className="h-full w-full object-cover object-center"
                   />
-                </div>
-								
+                </div>						
                 <h3 className="mt-6 text-sm text-gray-500">
-                  <a href={stores.href}>
                     <span className="absolute inset-0" />
                     {stores.name}
-                  </a>
                 </h3>
                 <p className="text-base font-semibold text-gray-900">{stores.description}</p>
 			
