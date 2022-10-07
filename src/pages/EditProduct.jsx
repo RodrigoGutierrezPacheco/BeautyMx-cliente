@@ -11,12 +11,9 @@ import SueccesAlert from '../components/SuccesAlert/SuccesAlert';
 const API_URL = `${process.env.REACT_APP_SERVER_URL}`;
 
 const EditProduct = (props) => {
-	console.log(props)
 	const navigate = useNavigate();
 	const [product, setProject] = useState(null);
   const {id} = useParams();
-	// console.log("USEPARAMS--->",useParams)
-	// console.log("PROPS-----",props)
 	const[showAlert,setShowAlert] = useState(false);
 	const [productname, setProductname] = useState("");
 	const [description, setDescription] = useState("");
@@ -31,7 +28,6 @@ const EditProduct = (props) => {
     axios
       .get( `${process.env.REACT_APP_SERVER_URL}/productos/${id}`)
       .then((response) => {
-				// console.log("RESPUESTA---->",response)
         const oneProject = response.data;
         setProject(oneProject);
 				setProductname(oneProject.productname)
@@ -41,8 +37,6 @@ const EditProduct = (props) => {
 				setCategorytwo(oneProject.categorytwo)
 				setSubcategory(oneProject.subcategory)
 				setPrice(oneProject.price)
-				// console.log(setProductname)
-				// console.log("ONEPROJECT---->>>>",oneProject)
       })
       .catch((error) => console.log(error));
   };
@@ -53,8 +47,6 @@ const EditProduct = (props) => {
 
 
 	const handleFileUpload = (e) => {
-    console.log("The file to be uploaded is: ", e.target.files[0]);
-     console.log("Enviando datos-----")
     const uploadData = new FormData();
  
     // imageUrl => this name has to be the same as in the model since we pass
@@ -64,7 +56,6 @@ const EditProduct = (props) => {
     service
       .uploadImage(uploadData)
       .then(response => {
-        console.log("response is: ", response);
         // response carries "fileUrl" which we can use to update the state
         setImageUrl(response.imageUrl);
       })
@@ -72,7 +63,6 @@ const EditProduct = (props) => {
   };
 
   const handleSubmit = (e) =>{
-		console.log("SUBIENDO DATOS")
     e.preventDefault();
 
 		const requestBody = {productname,description,brand,categoryone,categorytwo,subcategory,price,imageUrl};
@@ -80,7 +70,6 @@ const EditProduct = (props) => {
 		axios
 		.put(`${process.env.REACT_APP_SERVER_URL}/productos/${id}`, requestBody)
 		.then((response) => {
-			console.log(response)
 			setProductname("");
 			setDescription("");
 			setBrand("");

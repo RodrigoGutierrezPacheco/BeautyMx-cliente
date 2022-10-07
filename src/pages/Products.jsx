@@ -7,7 +7,6 @@ import './auth.css'
 const API_URL = `${process.env.REACT_APP_SERVER_URL}`
 
 function Products(props) {
-	console.log(props)
   const [products, setProducts] = useState([]);
 
   const getAllProducts = () => {

@@ -11,7 +11,6 @@ import SuccesAlert from '../components/SuccesAlert/SuccesAlert';
 const API_URL = `${process.env.REACT_APP_SERVER_URL}`;
 
 const DataBase = (props) => {
-	// console.log("PROPS-----",props)
 	const[showAlert,setShowAlert] = useState(false);
 	const [productname, setProductname] = useState("");
 	const [description, setDescription] = useState("");
@@ -24,7 +23,6 @@ const DataBase = (props) => {
 
 	const handleFileUpload = (e) => {
     console.log("The file to be uploaded is: ", e.target.files[0]);
-     console.log("Enviando datos-----")
     const uploadData = new FormData();
  
     // imageUrl => this name has to be the same as in the model since we pass
@@ -34,7 +32,6 @@ const DataBase = (props) => {
     service
       .uploadImage(uploadData)
       .then(response => {
-        console.log("response is: ", response);
         // response carries "fileUrl" which we can use to update the state
         setImageUrl(response.imageUrl);
       })

@@ -10,19 +10,15 @@ import DataBase from './DataBase';
 function ProductsDetails (props) {
 	const navigate = useNavigate();
   const [product, setProject] = useState(null);
-	// console.log(product)
   const {id} = useParams();
-	// console.log("PROOOPS------>",props);
 
 
 	const getProject = () => {        
     axios
       .get( `${process.env.REACT_APP_SERVER_URL}/productos/${id}`)
       .then((response) => {
-				// console.log("RESPUESTA---->",response)
         const oneProject = response.data;
         setProject(oneProject);
-				// console.log(oneProject)
       })
       .catch((error) => console.log(error));
   };
@@ -37,7 +33,6 @@ function ProductsDetails (props) {
            navigate("/productos");
 				})
 				.catch(error=>console.log(error))
-				// console.log(id)
 			}
         
   return (
